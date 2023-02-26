@@ -12,19 +12,40 @@
 </head>
 <body>
     <section class="mt-20 w-9/12 mx-auto mb-20">
-        <div class="grid grid-cols-1 gap-4">
-            <div>
-                <h1 class="text-4xl font-bold text-indigo-900 mb-8">
-                    Tutorials
-                </h1>
-                <p>
-                    <a href="{{ route('admin.create.tutorial') }}" class="btn btn-primary">Add New</a>
-                </p>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-4xl font-bold text-indigo-900 mb-8">
+                        Tutorials
+                    </h1>
+                    <p>
+                        <a href="{{ route('admin.create.tutorial') }}" class="btn btn-primary">Add New</a>
+                    </p>
+                    <hr>
+                </div>
             </div>
-        </div>
-        <div class="grid grid-cols-1 gap-4 mt-20">
-            <div>
-                <hr>
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table">
+                        <thead>
+                          <tr> 
+                            <th scope="col">Title</th>
+                            <th scope="col">Actions</th> 
+                          </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($tutorials as $tutorial)
+                            <tr> 
+                                <td>{{ $tutorial->title }}</td>
+                                <td>
+                                    <a href="{{ route('admin.edit.tutorial', $tutorial->id) }}" class="btn btn-info">Edit</a>
+                                    <a href="#" class="btn btn-warning">Delete</a>
+                                </td>
+                              </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
+                </div>
             </div>
         </div>
     </section>

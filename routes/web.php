@@ -35,6 +35,8 @@ Route::middleware([
     Route::get('admin/tutorial', [TutorialController::class, 'index'])->name('admin.index.tutorial');
 Route::get('admin/add/tutorial', [TutorialController::class, 'create'])->name('admin.create.tutorial');
 Route::post('admin/add/tutorial/save', [TutorialController::class, 'store'])->name('admin.store.tutorial');
+Route::get('admin/edit/tutorial/{id}', [TutorialController::class, 'edit'])->name('admin.edit.tutorial');
+Route::put('admin/update/tutorial/save/{id}', [TutorialController::class, 'update'])->name('admin.update.tutorial');
 });
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth:sanctum']], function () {
