@@ -16,6 +16,13 @@ class FrontController extends Controller
 
     public function details($slug)
     {
-        return view('front/details');
+        $details = Tutorial::where([
+            ['slug', '=', $slug],
+        ])->first();
+        
+        if($details)
+        {
+            return view('front/details', compact('details'));
+        }
     }
 }

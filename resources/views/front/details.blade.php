@@ -7,26 +7,26 @@
     
     @vite('resources/css/app.css')
 
-    <title>article title | Ayolearn</title>
+
+    <title>{{ $details->title }} | Ayolearn</title>
 </head>
 <body>
+    @include('components/navbar')
     <section class="mt-20 w-6/12 mx-auto mb-20">
         <div class="grid grid-cols-1">
             <div class="heading">
                 <h1 class="text-4xl font-bold text-indigo-900 mb-4">
-                    title article where geoes belong
+                    {{ $details->title }} 
                 </h1>
                 <p>
-                    Anne Machiaw • 12 Jan 2023
+                    {{ $details->id_creator }} • {{ $details->created_at }} 
                 </p>
             </div>
         </div>
         <div class="grid grid-cols-1 gap-4 mt-5">
             <div class="content">
                 <img class="w-full mb-5" src="https://blog.hubspot.com/hs-fs/hubfs/linkedin-summary-examples-4.jpg?width=1204&height=600&name=linkedin-summary-examples-4.jpg" alt="">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti dolorem eligendi est consequuntur repellendus commodi, natus doloremque reiciendis sint, cupiditate at optio dignissimos aut aliquam explicabo odit dolor vel perferendis.
-                </p>
+                {!! $details->content !!} 
             </div>
         </div>
     </section>

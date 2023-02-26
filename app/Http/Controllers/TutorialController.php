@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tutorial;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class TutorialController extends Controller
@@ -39,6 +40,23 @@ class TutorialController extends Controller
     public function store(Request $request)
     {
         //
+        //
+        $data = $request->all();
+
+        $thumbnailName = str_replace(' ', '-', $request->file('thumbnail')->getClientOriginalName());
+
+        $url = $request->file('thumbnail')->storeAs(
+            'assets/thumbnail_tips',
+            $thumbnailName,
+            'public'
+        );
+
+        $data['thumbnail'] = $url;
+        $data['slug'] = Str::slug($request->title);
+
+        Tutorial::create($data);
+
+        return redirect()->route('admin.index.tutorial');
     }
 
     /**

@@ -16,8 +16,9 @@ class Tutorial extends Model
     protected $fillable = [
         'title',
         'slug',
+        'thumbnail',
         'content',
-        'id_tutorial',
+        'id_creator',
         'page',
     ];
 
