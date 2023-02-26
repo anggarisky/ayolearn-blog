@@ -1,27 +1,27 @@
-<nav class="flex align-middle mx-auto w-9/12 my-8">
-    <a href="{{ route('home') }}">
-        <h2 class="text-indigo-900 text-2xl font-bold">Ayolearn</h2>
-    </a>
-    <ul class="ml-20 mt-2 flex gap-10">
-        <li>
-            <a href="{{ route('home') }}">
-                Home
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="{{ route('home') }}">Ayolearn</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
             </a>
-        </li>
-        <li>
-            <a href="#">
-                UI/UX Design
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                Web Development
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                Mobile Development
-            </a>
-        </li>
-    </ul>
-</nav>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">UI/UX Design</a></li>
+              <li><a class="dropdown-item" href="#">Web Development</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

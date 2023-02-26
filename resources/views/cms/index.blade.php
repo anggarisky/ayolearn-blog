@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    @vite('resources/css/app.css')
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
 
     <title>Admin Dashboard | Ayolearn</title>
 </head>
@@ -17,7 +18,7 @@
                     Tutorials
                 </h1>
                 <p>
-                    <a href="{{ route('admin.create.tutorial') }}" class="px-4 py-3 rounded-lg bg-indigo-500 text-white">Add New</a>
+                    <a href="{{ route('admin.create.tutorial') }}" class="btn btn-primary">Add New</a>
                 </p>
             </div>
         </div>
