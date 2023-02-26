@@ -12,6 +12,19 @@
 
 
     <title>{{ $details->title }} | Ayolearn</title>
+    <meta name="description" content="In this tutorial, we will learn about {{ $details->title }} from beginning so that you are able to prepare your dream career better with Ayolearn.">
+    <meta name="keywords" content="Flutter, Android Studio, Figma, SwiftUI, HTML CSS, Bootstrap, Tailwind CSS, Laravel, React Native, Webflow, JavaScript, Adobe XD, Web Design, Mobile App Development">
+    <meta name="author" content="Ayolearn" />
+
+    <meta image="{{ Storage::url($details->thumbnail) }}">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="{{ Storage::url($details->thumbnail) }}">
+    <meta content="index, follow" name="robots" />
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ $details->title }} by Ayolearn">
+    <meta property="og:site_name" content="Ayolearn">
+    <meta property="og:url" content="https://ayolearn.com/tutorial/{{ $details->slug }}">
+    <meta property="og:description" content="In this tutorial, we will learn about {{ $details->title }} from beginning so that you are able to prepare your dream career better with Ayolearn.">
 </head>
 <body>
     @include('components/navbar')
