@@ -25,7 +25,7 @@
         </div>
         <div class="grid grid-cols-1 gap-4 mt-5">
             <div class="content">
-                <img class="w-full mb-5" src="{{ Storage::url($tutorial->thumbnail) }}" alt="">
+                <img class="w-full mb-5" src="{{ Storage::url($details->thumbnail) }}" alt="">
                 {!! $details->content !!} 
             </div>
         </div>
