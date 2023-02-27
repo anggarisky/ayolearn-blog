@@ -39,7 +39,12 @@
                                 <td>{{ $tutorial->title }}</td>
                                 <td>
                                     <a href="{{ route('admin.edit.tutorial', $tutorial->id) }}" class="btn btn-info">Edit</a>
-                                    <a href="#" class="btn btn-warning">Delete</a>
+                                    <form method="POST" action="{{ route('admin.destroy.tutorial', $tutorial->id) }}">
+                                        
+                                        @method('delete')
+                                        @csrf
+                                        <button class="mt-3 btn btn-danger form-delete">Delete</button>
+                                     </form>
                                 </td>
                               </tr>
                           @endforeach

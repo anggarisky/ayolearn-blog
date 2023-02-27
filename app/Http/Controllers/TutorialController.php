@@ -120,8 +120,12 @@ class TutorialController extends Controller
      * @param  \App\Models\Tutorial  $tutorial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tutorial $tutorial)
+    public function destroy(Tutorial $tutorial, Request $request, $id)
     {
         //
+        $tutorial = Tutorial::findOrFail($id);
+        $tutorial->delete();
+
+        return redirect()->route('admin.index.tutorial');
     }
 }
