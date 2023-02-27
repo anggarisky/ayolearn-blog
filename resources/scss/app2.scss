@@ -1,6 +1,6 @@
 $black: #000000;
 $white: #ffffff;
-$gray: #EFEFEF;
+$gray: #efefef;
 $darkgray: #666666;
 $sigmarOne: "Sigmar One";
 $poppins: "Poppins";
@@ -25,6 +25,7 @@ body {
         width: 270px;
         height: 200px;
         margin-right: 20px;
+        border-radius: 16px;
     }
 
     .information {
@@ -85,8 +86,6 @@ body {
             font-weight: 500;
             color: $black;
         }
-
-
     }
 }
 
