@@ -10,8 +10,9 @@ class FrontController extends Controller
     //
     public function index()
     {
-        $tutorials = Tutorial::latest()->get();
-        return view('front/index', compact('tutorials'));
+        $tutorials = Tutorial::inRandomOrder()->take(3)->get();
+        $latest_tutorials = Tutorial::latest()->get();
+        return view('front/index', compact('tutorials', 'latest_tutorials'));
     }
 
     public function details($slug)
